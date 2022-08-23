@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
 $res_data1 = array();
 $res_data1['name'] = 'Students Marks in Avg Marks Subject';
 $res_data1['data'] = $avgMarksArr;
-$res_data1['type'] = 'bar';
+$res_data1['type'] = 'line';
 
 $sql = "SELECT subjects.name as subject_name,avg(marks) as avg_marks FROM marks JOIN subjects on subjects.id=marks.subject_id GROUP BY subject_id";
 $result = $conn->query($sql);
