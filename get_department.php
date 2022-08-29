@@ -7,7 +7,7 @@ $avgMarksArr = array();
 if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-                $avgMarksArr[] = ['child' => 'employees', 'name' => $row["id"],'y' => 1, 'color' => sprintf( "#%06X", mt_rand( 0, 0xFFFFFF ))];
+                $avgMarksArr[] = ['child' => 'employees', 'name' => $row["id"],'y' => 1, 'color' => $row['color']];
         }
 }
 $res_data1 = array();

@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $data['series'][2][$x]['name'] = $data['series'][1][$x]['name'] = $row['name'];
     $x++;
   }
-  $data['type']=['pie','bar','pie'];
+  $data['type']=['pie','pie','bar'];
   print_r(json_encode($data));die;
 } else {
   echo "0 results";
