@@ -18,6 +18,7 @@ if ($result->num_rows > 0) {
 }
     
 $res_data['name'] = 'Withdraw';
+$res_data['dataLabels'] = ['format'=> '{y} INR'];
 $res_data['data'] = $transArr;
 
 $sql = "SELECT *, UNIX_TIMESTAMP(date) as unix_date FROM transaction WHERE deposits > 0 and date between '$start_date' and '$end_date' ORDER BY transaction.date ASC";
@@ -34,6 +35,7 @@ if ($result->num_rows > 0) {
 }
     
 $res_data2['name'] = 'Deposit';
+$res_data2['dataLabels'] = ['format'=> '{y} INR'];
 $res_data2['data'] = $transArr;
 
 echo json_encode([$res_data, $res_data2]);
